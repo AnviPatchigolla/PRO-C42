@@ -1,12 +1,14 @@
 var hr, mn, sc;
+var hrAngle, mnAngle, scAngle
 
 function setup() {
   createCanvas(500, 500);
+  angleMode(DEGREES);
 }
 
 function draw() {
   background(0); 
-  angleMode(DEGREES);
+  
   translate(200, 200);
   rotate(-90);
 
@@ -16,7 +18,7 @@ function draw() {
 
   scAngle = map(sc, 0, 60, 0, 360);
   mnAngle = map(mn, 0, 60, 0, 360);
-  hrAngle = map(hr, 0, 24, 0, 360);
+  hrAngle = map(hr % 12, 0, 12, 0, 360);
 
   push();
   rotate(scAngle);
